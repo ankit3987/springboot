@@ -9,6 +9,10 @@
 
 * [Kotlin Project](https://kotlinlang.org/docs/jvm-create-project-with-spring-boot.html)
   
+### Fundamentals
+
+https://www.youtube.com/watch?v=CVBpYfPKGlE
+
 
 ### Java Setup
 * [Install Java 17](https://www.oracle.com/in/java/technologies/downloads/#jdk17-windows)
@@ -26,5 +30,12 @@ java --version
 ### Run Command
 ./gradlew bootRun
 
+### Build Command
+./gradlew build
+
 ### Open Browser
-http://localhost:8080?name=John
+http://localhost:8080
+http://localhost:8080/hello?name=Inderm
+http://localhost:8080/message
+
+### IDE Plugins
