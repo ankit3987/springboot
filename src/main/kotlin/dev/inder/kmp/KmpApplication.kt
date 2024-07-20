@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 }
 
 @RestController
-class MessageController(val service: MessageService) {
+class MessageController(val messageService: MessageService,val notesService: NotesService) {
 
 	@GetMapping("/hello")
 	fun sayHello(@RequestParam("name") name: String) = "Hello, $name!"
@@ -29,15 +29,29 @@ class MessageController(val service: MessageService) {
 		Message("3", "Privet!"),
 	)
 
-	@GetMapping("/")
-	fun index() = service.findMessages()
+	@GetMapping("/messages")
+	fun readAllMessages() = messageService.findMessages()
 
-	@GetMapping("/{id}")
-	fun index(@PathVariable id: String): List<Message> =
-		service.findMessageById(id)
+	@GetMapping("/message/{id}")
+	fun readSingleMessage(@PathVariable id: String): List<Message> =
+		messageService.findMessageById(id)
 
 	@PostMapping("/message")
-	fun createMessage(@RequestBody message: Message) {
-		service.save(message)
+	fun writeMessage(@RequestBody message: Message) {
+		messageService.save(message)
+	}
+
+	@GetMapping("/notes")
+	fun readAllNotes() = notesService.findNotes()
+
+	@GetMapping("/note/{id}")
+	fun readSingleNote(@PathVariable id: String): List<Note> =
+		notesService.findNoteById(id)
+
+	@PostMapping("/note")
+	fun writeNote(@RequestBody note: Note) {
+		notesService.save(note)
 	}
 }
+
+

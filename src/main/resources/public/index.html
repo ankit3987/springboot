@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My REST API Documentation</title>
+</head>
+<body>
+<h1>Welcome to My REST API</h1>
+
+<h2>Overview</h2>
+<p>This API provides access to ...</p>
+
+<h2>Authentication</h2>
+<p>API keys are required for all requests. To obtain an API key, ...</p>
+
+<h2>Endpoints</h2>
+<h3>GET /users</h3>
+<p>Retrieves a list of all users.</p>
+...
+
+<h2>Error Handling</h2>
+<p>Error responses are returned in JSON format with the following structure:</p>
+<pre>
+    {
+        "error": {
+            "code": "INVALID_REQUEST",
+            "message": "The request is invalid."
+        }
+    }
+    </pre>
+
+<h2>Examples</h2>
+<p>To retrieve a list of users using cURL:</p>
+<pre>
+    curl -H "Authorization: Bearer YOUR_API_KEY" https://api.example.com/users
+    </pre>
+
+<h2>Contact</h2>
+<p>For support or feedback, please contact us at support@example.com.</p>
+</body>
+</html>
