@@ -1,5 +1,8 @@
 package dev.inder.kmp
 
+import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.responses.ApiResponse
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,8 +20,12 @@ fun main(args: Array<String>) {
 }
 
 @RestController
+@Tag(name = "Demo", description = "Operations showcasing the use of HTTP GET/POST methods related to messages and notes.")
 class MessageController(val messageService: MessageService,val notesService: NotesService) {
 
+	@Operation(summary = "returns a greeting", responses = [
+		ApiResponse(responseCode = "200", description = "Hello, name!")
+	])
 	@GetMapping("/hello")
 	fun sayHello(@RequestParam("name") name: String) = "Hello, $name!"
 
