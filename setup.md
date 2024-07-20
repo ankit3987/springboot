@@ -34,6 +34,7 @@ java --version
 ./gradlew build
 
 ### Open Browser
+http://localhost:8080/static
 http://localhost:8080
 http://localhost:8080/hello?name=Inderm
 http://localhost:8080/message
