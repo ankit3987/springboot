@@ -25,7 +25,8 @@ java --version
   - http://localhost:8080/static
   - http://localhost:8080
   - http://localhost:8080/hello?name=Inder
-  - http://localhost:8080/message
+  - http://localhost:8080/messages
+  - http://localhost:8080/notes
 
 ### Run Command
 ./gradlew bootRun
