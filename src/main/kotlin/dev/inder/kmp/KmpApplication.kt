@@ -20,8 +20,8 @@ fun main(args: Array<String>) {
 }
 
 @RestController
-@Tag(name = "Demo", description = "Operations showcasing the use of HTTP GET/POST methods related to messages and notes.")
-class MessageController(val messageService: MessageService,val notesService: NotesService) {
+@Tag(name = "Hello", description = "Saying hello.")
+class HelloController() {
 
 	@Operation(summary = "returns a greeting", responses = [
 		ApiResponse(responseCode = "200", description = "Hello, name!")
@@ -35,6 +35,11 @@ class MessageController(val messageService: MessageService,val notesService: Not
 		Message("2", "Bonjour!"),
 		Message("3", "Privet!"),
 	)
+}
+
+@RestController
+@Tag(name = "Messages", description = "Showcasing the use of HTTP GET/POST methods related to messages.")
+class MessageController(val messageService: MessageService) {
 
 	@GetMapping("/messages")
 	fun readAllMessages() = messageService.findMessages()
@@ -47,6 +52,11 @@ class MessageController(val messageService: MessageService,val notesService: Not
 	fun writeMessage(@RequestBody message: Message) {
 		messageService.save(message)
 	}
+}
+
+@RestController
+@Tag(name = "Notes", description = "Showcasing the use of HTTP GET/POST methods related to notes.")
+class NoteController(val notesService: NotesService) {
 
 	@GetMapping("/notes")
 	fun readAllNotes() = notesService.findNotes()
