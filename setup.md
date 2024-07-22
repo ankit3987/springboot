@@ -29,10 +29,10 @@ java --version
   - http://localhost:8080/notes
 
 ### Run Command
-./gradlew bootRun
+`./gradlew bootRun`
 
 ### Build Command
-./gradlew build
+`./gradlew build`
   
 ### Fundamentals
 
