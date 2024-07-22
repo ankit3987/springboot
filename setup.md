@@ -28,6 +28,9 @@ java --version
   - http://localhost:8080/messages
   - http://localhost:8080/notes
 
+### Running H2 
+  - http://localhost:8080/h2-console
+
 ### Run Command
 `./gradlew bootRun`
 
